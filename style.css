@@ -174,4 +174,66 @@ body {
     max-height: 320px;
     object-fit: cover;
   }
+ 
   
+  /* ======== MENU BUTTON ======== */
+#menu-toggle {
+  display: none; /* hidden on desktop */
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* ======== MOBILE VIEW ======== */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  #menu-toggle {
+    display: block; /* show menu button */
+  }
+
+  #sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #0b1622;
+    transition: 0.3s;
+    z-index: 1000;
+  }
+
+  #sidebar.active {
+    left: 0;
+  }
+
+  #main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  #nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-link {
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  #sidebar img {
+    width: 80px;
+    height: 80px;
+  }
+}
